@@ -25,7 +25,10 @@ This game will largely be built in vanilla JS along with HTML Canvas and CSS to 
 
 # Wireframes
 
-#Implementation Timeline
+![Game Wireframe](https://user-images.githubusercontent.com/73361653/107179125-b7d97680-69a3-11eb-8739-17d6d7bbcdcc.jpg)
+
+
+# Implementation Timeline
 
 ### Day 1
 
