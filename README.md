@@ -35,5 +35,18 @@ This game will largely be built in vanilla JS along with HTML Canvas and CSS to 
 
 ### Day 2
 
-* Figure out movement and user input for 
+* Figure out movement and user input for the player character. 
+* Begin to implement planting mechanic. 
+
+### Day 3
+
+* Finish the planting mechanic. 
+* Figure out how to implement oxygen levels that rise and fall.
+* Begin to brainstorm sprites/visuals for the game.
+
+### Day 4
+
+* Continue to wrap up any leftover functionality. 
+* Add my personal links and style them. 
+
 
