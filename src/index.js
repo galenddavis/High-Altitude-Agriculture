@@ -1,4 +1,2 @@
 import './styles/index.scss';
-import {greeting} from './scripts/test'
-
-greeting();
+import * as GameBoard from './scripts/gameBoard'
