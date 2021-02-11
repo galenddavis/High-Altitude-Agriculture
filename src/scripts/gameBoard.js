@@ -1,4 +1,6 @@
-import Character from './character/character'
+// import Character from './character'
+const Character = require('./character')
+const Plant = require('./plant')
 import Wall from './walls';
 
 
@@ -7,23 +9,33 @@ window.addEventListener('load', () => {
     const ctx = canvas.getContext('2d');
     
     // Set canvas size 
-    canvas.width = 1400
-    canvas.height = 750
+    canvas.width = 1400 // 35 columns
+    canvas.height = 760 // 18 rows
 
     
     let character = new Character(canvas.width, canvas.height, canvas);
-    let wall = new Wall(350, 250, canvas.width, canvas.height)
+    let wall1 = new Wall(1370, 120, 15, 0)
+    // wall2.fillStyle = 'yellow'
+    let wall2 = new Wall(1370, 120, 15, 0)
+    // let plant = new Plant()
+   
     let time = 0;
     
     
     function playGame(timestamp) {
-        ctx.clearRect(0, 0, 1400, 750)
+        ctx.clearRect(0, 0, 1400, 760)
         let deltaTime = timestamp - time;
         time = timestamp;
         
         character.update(deltaTime);
-        wall.draw(ctx);
+       
+        // Wall.draw();
+      
         character.draw(ctx)
+        
+        wall1.draw(ctx);
+        wall2.draw(ctx);
+        // plant.draw(ctx);
 
         requestAnimationFrame(playGame);
     }
@@ -31,6 +43,9 @@ window.addEventListener('load', () => {
     playGame();
 
 })
+
+
+
 
 
 
