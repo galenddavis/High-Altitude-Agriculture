@@ -23,8 +23,6 @@ class Character {
             canvas.keys[event.key] = true;
         })
 
-      
-
         document.addEventListener('keyup', event => {
             canvas.keys[event.key] = false;
         })
@@ -90,12 +88,12 @@ class Character {
         if (this.position.x + this.width > this.gameWidth) {
             this.position.x = this.gameWidth - this.width  
         }
-        this.plant()
+        this.plant(ctx)
     }
 
     plant(ctx) {
         if (this.canvas.keys && this.canvas.keys['e']) {
-            debugger
+            console.log('hello')
             let plant = new Plant(this.position.x, this.position.y, ctx)
             plant.draw(ctx)
         }

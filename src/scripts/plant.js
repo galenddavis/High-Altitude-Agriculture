@@ -16,7 +16,7 @@ class Plant {
     draw(ctx) {
         // ctx.fillStyle = 'orange'
         // ctx.fillRect(this.position.x - 3, this.position.y - 3, 15, 15)
-        debugger
+        console.log('bye')
         ctx.fillStyle = 'green'
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
     }
