@@ -1,34 +1,38 @@
-const Plant = require('./plant')
+// const Plant = require('./plant')
+import Plant from './plant'
 
 class Character {
     constructor(gameWidth, gameHeight, canvas) {
         this.canvas = canvas
-        ctx = canvas.getContext('2d')
+        this.ctx = canvas.getContext('2d')
         this.gameWidth = gameWidth;
         this.gameHeight = gameHeight;
         this.width = 40;
         this.height = 40;
-
-        // this.maxSpeed = 10;
-        // this.speed = 0;
-
+        this.plants = [];
         this.position = {
             x: gameWidth / 2 - this.width / 2, 
             y: gameHeight / 2 - this.height / 2
         }
 
+        // Movement
         document.addEventListener('keydown', event => {
-            // alert(event.key)
             canvas.keys = (canvas.keys || []);
             canvas.keys[event.key] = true;
         })
-
         document.addEventListener('keyup', event => {
             canvas.keys[event.key] = false;
         })
 
-        // this.move = this.move.bind(this)
-        this.plant = this.plant.bind(this)
+        // Planting
+        document.addEventListener('keydown', event => {
+            if (event.key === 'e') {
+                for (let i = 0; i < 1; i++){
+                    this.plant();
+                }
+
+            }
+        })
     }
 
     draw(ctx) {
@@ -88,17 +92,18 @@ class Character {
         if (this.position.x + this.width > this.gameWidth) {
             this.position.x = this.gameWidth - this.width  
         }
-        this.plant(ctx)
     }
 
-    plant(ctx) {
-        if (this.canvas.keys && this.canvas.keys['e']) {
-            console.log('hello')
-            let plant = new Plant(this.position.x, this.position.y, ctx)
-            plant.draw(ctx)
-        }
+    plant() {
+        const plantInstance = new Plant(this)
+        this.plants.push(plantInstance)
+        this.plants[this.plants.length - 1].draw(this.ctx)
+           
     }
 }
 
-module.exports = Character
+
+
+// module.exports = Character
+export default Character;
 
