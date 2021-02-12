@@ -31,6 +31,7 @@ class Plant {
         ctx.fillStyle = 'green'
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
         debugger
+        
         console.log(this)
     }
 }
