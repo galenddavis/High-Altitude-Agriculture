@@ -7,34 +7,35 @@ class Plant {
         this.height = plantSizes[this.stage]
         this.width = plantSizes[this.stage]
         this.ctx = player.ctx;
-        this.player = player
+        this.player = player;
+        this.plant = new Image();
+        this.plant.src = 'src/assets/images/plant_lvl_1.png'
 
+        this.plantX = this.player.state = 1 ? -30 : 35;
+        // if (this.player.state = 0) {
+        //     this.plantX = 1
+        // } else {
+        //     this.plantX = -1
+        // }
         this.position = {
-            x: player.position.x + 5, 
-            y: player.position.y + 5
+            x: player.position.x + this.plantX, 
+            y: player.position.y + 35
         }
     }
-
-    // update(plants) {
-    //     if (this.player.plants.length < 1) return; 
-    //     console.log(plants)
-    //     // Call the draw function below. 
-        
-    // }
     
     draw(ctx) {
         if (this.player.plants.length < 1) return; 
-        // ctx.fillStyle = 'orange'
-        // ctx.fillRect(this.position.x - 3, this.position.y - 3, 15, 15)
-        // console.log(plants)
-        console.log(ctx)
+        console.log(this.player.state)
         ctx.fillStyle = 'green'
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
-        debugger
-        
-        console.log(this)
+        // ctx.drawImage(this.plant, this.position.x, this.position.y, this.height, this.width)
+        // setTimeout(this.grow(), 10000)
+    }
+
+    grow() {
+        this.plant.src = 'src/assets/images/plant_lvl_2.png'
+        this.ctx.drawImage(this.plant, this.position.x, this.position.y, this.height, this.width)
     }
 }
 
-// module.exports = Plant;
 export default Plant;

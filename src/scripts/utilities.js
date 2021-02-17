@@ -1,5 +1,5 @@
 
-const plantSizes = [9, 11, 15]
+const plantSizes = [50, 20, 25]
 
 
 module.exports = plantSizes;
