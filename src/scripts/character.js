@@ -3,18 +3,6 @@ import Plant from './plant'
 import plantSizes from './utilities';
 
 class Character {
-    // constructor(gameWidth, gameHeight, canvas) {
-    //     this.canvas = canvas
-    //     this.ctx = canvas.getContext('2d')
-    //     this.gameWidth = gameWidth;
-    //     this.gameHeight = gameHeight;
-    //     this.width = 40;
-    //     this.height = 40;
-    //     this.plants = [];
-    //     this.position = {
-    //         x: gameWidth / 2 - this.width / 2, 
-    //         y: gameHeight / 2 - this.height / 2
-    //     }
     constructor(x, y, size, ctx) {
         this.keys = [];
         this.ctx = ctx
@@ -26,8 +14,8 @@ class Character {
             y: y
         }
         this.state = 0
-        // this.player = new Image();
-        // this.player.src = 'src/assets/images/player_right.png'
+        this.player = new Image();
+        this.player.src = 'src/assets/images/player_right.png'
 
         // Movement
         document.addEventListener('keydown', event => {
@@ -35,22 +23,24 @@ class Character {
             this.keys[event.key] = true;
 
         })
-
-        // document.addEventListener('keydown', this.move(this.keys))
-
         document.addEventListener('keyup', event => {
             this.keys[event.key] = false;
         })
 
-        // Planting
+        // Planting and Picking
         document.addEventListener('keydown', event => {
             if (event.key === 'e') {
                 for (let i = 0; i < 1; i++){
                     this.plant();
                 }
-
             }
         })
+        document.addEventListener('keydown', event => {
+            if (event.key === 'q') {
+                this.pick();
+            }
+        })
+
     }
 
     draw(ctx) {
@@ -58,9 +48,9 @@ class Character {
         this.plants.forEach( plant => {
             plant.draw(this.ctx)
         })
-        ctx.fillStyle = 'red'
-        ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
-        // ctx.drawImage(this.player, this.position.x, this.position.y, this.height, this.width)
+        // ctx.fillStyle = 'red'
+        // ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
+        ctx.drawImage(this.player, this.position.x, this.position.y, this.height, this.width)
 
     }
 
@@ -92,12 +82,12 @@ class Character {
         if (this.keys && this.keys['ArrowUp']) {this.position.y -= 5}
         if (this.keys && this.keys['ArrowDown']) {this.position.y += 5}
         if (this.keys && this.keys['ArrowLeft']) {
-            // this.state = 1
-            // this.player.src = 'src/assets/images/player_left.png'
+            this.state = 1
+            this.player.src = 'src/assets/images/player_left.png'
             this.position.x -= 5}
         if (this.keys && this.keys['ArrowRight']) {
-            // this.state = 0
-            // this.player.src = 'src/assets/images/player_right.png'
+            this.state = 0
+            this.player.src = 'src/assets/images/player_right.png'
             this.position.x += 5}
         
 
@@ -118,6 +108,23 @@ class Character {
         this.plants.push(plantInstance)
         this.plants[this.plants.length - 1].draw(this.ctx)
            
+    }
+
+    pick() {
+        this.plants.forEach( plant => {
+            if (this.position.x - plant.position.x <= 30) {
+                plant = {}
+            }
+        })
+    }
+
+    pick() {
+        this.plants.forEach( plant => {
+            if (Math.abs((this.position.x + this.width / 2) - (plant.position.x + plant.width / 2)) <= 40) {
+                let index = this.plants.indexOf(plant)
+                this.plants.splice(index, 1)
+            }
+        })
     }
 }
 

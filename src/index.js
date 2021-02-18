@@ -27,8 +27,6 @@ window.addEventListener('DOMContentLoaded', () => {
         ctx.clearRect(0, 0, 1400, 760)
         let deltaTime = timestamp - time;
         time = timestamp;
-        // console.log(time)
-        // game.update(deltaTime)
         game.update(deltaTime, ctx)
         requestAnimationFrame(playGame);
     }
