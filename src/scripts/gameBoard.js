@@ -1,6 +1,7 @@
 import Character from './character'
 import Plant from './plant';
 import Wall from './walls';
+import Oxygen from './oxygen'
 
 
 class GameBoard {
@@ -8,11 +9,13 @@ class GameBoard {
         this.ctx = ctx
         this.player = new Character(300, 300, 80, this.ctx);
         this.wall = new Wall(1370, 140, 15, 0)
+        this.oxygen = new Oxygen(37, 600, 63, 55)
     }
 
     draw(ctx) {
         this.wall.draw(ctx)
         this.player.draw(ctx)
+        this.oxygen.draw(ctx)
     }
 
     update(deltaTime, ctx) {
