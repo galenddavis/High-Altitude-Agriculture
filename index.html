@@ -4,12 +4,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://kit.fontawesome.com/df63dd5d45.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600&family=Raleway:wght@400;500&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="./dist/main.css">
     <title>JavaScript Project</title>
 </head>
-<body>
 
-    <canvas id='game-screen'></canvas>
+<body>
+    <h1 id='title'>High.Altitude.Agriculture</h1>
+    <div class='main'>
+        <div class='sidebar'>
+            <p class='headers'>// 2077 //</p>
+            <p>
+                Night begins to fall as your ship passes slowly over the Earth. It's been months
+                since your life support systems have given out. 
+            </p>
+            <p>
+                You must maintain a careful Oxygen balance in your ship. Too little and you will asphyxiate, too
+                much and you run of the risk of damaging your little pixel lungs. Grow and pick plants to regulate the 
+                Oxygen levels. 
+            </p>
+            <p class='headers'>// Rules //</p>
+            <div class='key-commands'>
+                <div>
+                    <span class='directions'>
+                        <i class="fas fa-arrow-up"></i>
+                        <p>Move Up</p>
+                    </span>
+                    <span class='directions'>
+                        <i class="fas fa-arrow-right"></i>
+                        <p>Move Right</p>
+                    </span>
+                    <span class='directions'>
+                        <i class="fas fa-arrow-down"></i>
+                        <p>Move Down</p>
+                    </span>
+                    <span class='directions'>
+                        <i class="fas fa-arrow-left"></i>
+                        <p>Move Left</p>
+                    </span>
+                </div>
+                <div>
+                    <span class='directions'>
+                        <!-- <i class="fas fa-seedling"></i> -->
+                        <p class='key'>e</p>
+                        <p>Plant Seed</p>
+                    </span>
+                    <span class='directions'>
+                        <!-- <i class="fas fa-seedling"></i> -->
+                        <p class='key'>q</p>
+                        <p>Pick Plant</p>
+                    </span>
+                </div>
+            </div>
+           
+        </div>
+        <canvas id='game-screen'></canvas>
+    </div>
     <script src="./dist/main.js"></script>
 </body>
 </html>

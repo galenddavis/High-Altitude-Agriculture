@@ -1,35 +1,59 @@
-const plantSizes = require('./utilities')
+const plantHeights = require('./utilities')
+const plantWidths = require('./utilities')
 const Character = require('./character')
 
 class Plant {
     constructor(player) {
         this.stage = 0;
-        this.height = plantSizes[this.stage]
-        this.width = plantSizes[this.stage]
+        this.counter = 0
+        this.height = 95
+        this.width = 65
         this.ctx = player.ctx;
         this.player = player;
         this.plant = new Image();
-        this.plant.src = 'src/assets/images/plant_lvl_1.png'
+        this.plant.src = 'src/assets/images/plant_lvl_0.png'
 
-        this.plantX = this.player.state === 1 ? -25 : 50;
+        this.plantX = this.player.state === 1 ? -50 : 60;
         this.position = {
             x: this.player.position.x + this.plantX, 
-            y: this.player.position.y + 35
+            y: this.player.position.y - 15
+        }
+    }
+
+    update(ctx) {
+        console.log(this.counter)
+        this.draw(ctx)
+        if (this.counter >= 1000) {
+            this.grow1();
+        } 
+        if (this.counter >= 4000) {
+            this.grow2();
+        }
+        this.counter += 5
+    }
+
+    grow1() {
+        if (this.stage === 0) {
+            this.stage += 1
+            this.plant.src = 'src/assets/images/plant_lvl_1.png'
+            this.ctx.drawImage(this.plant, this.position.x, this.position.y, this.width, this.height)
+        }
+    }
+
+    grow2() {
+        if (this.stage === 1) {
+            this.stage += 1
+            this.plant.src = 'src/assets/images/plant_lvl_2.png'
+            this.ctx.drawImage(this.plant, this.position.x, this.position.y, this.width, this.height)
         }
     }
     
     draw(ctx) {
         if (this.player.plants.length < 1) return; 
-        // ctx.fillStyle = 'green'
-        // ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
-        ctx.drawImage(this.plant, this.position.x, this.position.y, this.height, this.width)
-        // setTimeout(this.grow(), 10000)
+        ctx.drawImage(this.plant, this.position.x, this.position.y, this.width, this.height)
     }
 
-    grow() {
-        this.plant.src = 'src/assets/images/plant_lvl_2.png'
-        this.ctx.drawImage(this.plant, this.position.x, this.position.y, this.height, this.width)
-    }
+    
 }
 
 export default Plant;

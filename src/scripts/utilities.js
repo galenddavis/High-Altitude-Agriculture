@@ -1,5 +1,7 @@
 
-const plantSizes = [50, 20, 25]
+const plantHeights = [30, 50, 85];
+const plantWidths = [25, 25, 55];
 
 
-module.exports = plantSizes;
+module.exports = plantHeights;
+module.exports = plantWidths;

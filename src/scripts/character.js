@@ -44,35 +44,14 @@ class Character {
     }
 
     draw(ctx) {
-        this.move()
+        
         this.plants.forEach( plant => {
-            plant.draw(this.ctx)
+            plant.update(this.ctx)
         })
         // ctx.fillStyle = 'red'
         // ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
         ctx.drawImage(this.player, this.position.x, this.position.y, this.height, this.width)
 
-    }
-
-    move(keys) {
-        // switch (this.keys) {
-        //     case 'ArrowUp':
-        //         this.position.y -= 8
-        //         console.log(this.position.y)
-        //         break;
-        //     case 'ArrowDown':
-        //         this.position.y += 8
-        //         break;
-        //     case 'ArrowLeft':
-        //         this.position.y -= 8
-        //         break;
-        //     case 'ArrowRight':
-        //         this.position.y += 8
-        //         break;
-        //     default:
-        //         break;
-        // }
-      
     }
 
     update(deltaTime) {
@@ -112,22 +91,14 @@ class Character {
 
     pick() {
         this.plants.forEach( plant => {
-            if (this.position.x - plant.position.x <= 30) {
-                plant = {}
-            }
-        })
-    }
-
-    pick() {
-        this.plants.forEach( plant => {
-            if (Math.abs((this.position.x + this.width / 2) - (plant.position.x + plant.width / 2)) <= 40) {
+            if (Math.abs((this.position.x + this.width / 2) - (plant.position.x + plant.width / 2)) <= 40 && 
+                Math.abs((this.position.y + this.height / 2) - (plant.position.y + plant.height / 2)) <= 40) {
                 let index = this.plants.indexOf(plant)
                 this.plants.splice(index, 1)
             }
         })
     }
 }
-
 
 
 // module.exports = Character
