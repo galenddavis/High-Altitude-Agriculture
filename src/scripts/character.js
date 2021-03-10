@@ -1,14 +1,15 @@
 // const Plant = require('./plant')
 import Plant from './plant'
-import plantSizes from './utilities';
+// import Oxygen from './oxygen'
 
 class Character {
-    constructor(x, y, size, ctx) {
+    constructor(x, y, size, ctx, oxygen) {
         this.keys = [];
         this.ctx = ctx
         this.width = size;
         this.height = size;
         this.plants = [];
+        this.oxygen = oxygen
         this.position = {
             x: x, 
             y: y
@@ -43,18 +44,33 @@ class Character {
 
     }
 
-    draw(ctx) {
-        
-        this.plants.forEach( plant => {
-            plant.update(this.ctx)
-        })
-        // ctx.fillStyle = 'red'
-        // ctx.fillRect(this.position.x, this.position.y, this.width, this.height)
-        ctx.drawImage(this.player, this.position.x, this.position.y, this.height, this.width)
+    // draw(ctx) {
+    //     this.plants.forEach( plant => {
+    //         plant.update(this.ctx)
+    //     })
+    //     ctx.drawImage(this.player, this.position.x, this.position.y, this.height, this.width)
+    // }
 
+    draw(ctx) {
+        debugger
+        ctx.drawImage(this.player, this.position.x, this.position.y, this.height, this.width)
+        this.plants.forEach((plant) => {
+            debugger
+            // ctx.drawImage(this.player, this.position.x, this.position.y, this.height, this.width)
+            if (plant.position.y > this.position.y) {
+                debugger
+                ctx.drawImage(this.player, this.position.x, this.position.y, this.height, this.width)
+                plant.update(this.ctx)
+            } else {
+                debugger
+                plant.update(this.ctx)
+                ctx.drawImage(this.player, this.position.x, this.position.y, this.height, this.width)
+            }
+        })
     }
 
-    update(deltaTime) {
+    update(deltaTime, ctx) {
+        this.draw(ctx)
         if (!deltaTime) return;
         // this.position.y += 6
         // this.move()
@@ -71,7 +87,7 @@ class Character {
         
 
         // This keeps the character from moving off the screen. 
-        if (this.position.y < 140) this.position.y = 140
+        if (this.position.y < 150) this.position.y = 150
         if (this.position.y + this.height > 760) {
             this.position.y = 760 - this.height
         }
@@ -86,7 +102,7 @@ class Character {
         const plantInstance = new Plant(this)
         this.plants.push(plantInstance)
         this.plants[this.plants.length - 1].draw(this.ctx)
-           
+        this.oxygen.increaseO2();
     }
 
     pick() {
@@ -97,10 +113,10 @@ class Character {
                 this.plants.splice(index, 1)
             }
         })
+        // this.oxygen.decreaseSpeed(this.plants)
     }
 }
 
 
-// module.exports = Character
 export default Character;
 

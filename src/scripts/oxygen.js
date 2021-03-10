@@ -2,14 +2,14 @@ import Character from './character'
 
 
 class Oxygen {
-    constructor(height, width, x, y) {
+    constructor(height, width, x, y, player) {
         this.height = height;
         this.width = width; 
         // max width = 735
         this.amount = width * 2
-        // this.plants = Character.plants
-        // this.speed = this.plants.length - 1.2
+        // this.plants = player.plants
         this.speed = -0.5
+        // this.speed = -0.5
         this.color = '#57f954'
         this.position = {
             x: x,
@@ -30,11 +30,33 @@ class Oxygen {
     update() {
         if (this.width <= 1) {
             this.width = 735
-        } else if (this.width > 1) {
-            this.width += this.speed;
-        } 
+        } else if (this.width >= 735) {
+            this.width = 735
+        }
+        this.reduceO2();
     }
-    
+
+    reduceO2() {
+        this.width += this.speed
+    }
+
+    increaseO2() {
+        this.width += 50
+    }
+
+
+    // Old Functions
+    // increaseSpeed(plants) {
+    //     const newSpeed = this.speed + (plants.length * 0.01)
+    //     this.speed = newSpeed
+    // }
+
+    // decreaseSpeed(plants) {
+    //     const newSpeed = this.speed - (plants.length * 0.01)
+    //     this.speed = newSpeed
+    // }
+
+
 }
 
 export default Oxygen;

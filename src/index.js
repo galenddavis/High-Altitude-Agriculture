@@ -3,6 +3,7 @@ import './styles/index.scss';
 // import * as Game from './scripts/entry'
 
 import GameBoard from './scripts/gameBoard'
+import StartScreen from './scripts/startScreen'
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -13,16 +14,21 @@ window.addEventListener('DOMContentLoaded', () => {
     canvas.width = 1400 // 35 columns
     canvas.height = 760 // 18 rows
 
+    // ctx.font = "50px Arial";
+    // ctx.fillStyle = 'red'
+    // ctx.fillText("Hello World", 10, 50);
+
+    const start = new StartScreen(ctx)
     const game = new GameBoard(ctx)
 
-    // // const plants = character.plants
-    // const character = new Character(canvas.width, canvas.height, canvas);
-    // let wall1 = new Wall(1370, 120, 15, 0)
-    // // wall2.fillStyle = 'yellow'
-    // let wall2 = new Wall(1370, 120, 15, 0)
-    // // let plant = new Plant()
-   
     let time = 0;
+    function startScreen(timestamp) {
+        ctx.clearRect(0, 0, 1400, 760)
+        start.draw(ctx)
+        requestAnimationFrame(startScreen);
+    }
+
+    
     function playGame(timestamp) {
         ctx.clearRect(0, 0, 1400, 760)
         let deltaTime = timestamp - time;
@@ -31,6 +37,8 @@ window.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(playGame);
     }
 
-    playGame();
+    startScreen(ctx);
+
+    // playGame();
 
 })

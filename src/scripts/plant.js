@@ -13,15 +13,14 @@ class Plant {
         this.plant = new Image();
         this.plant.src = 'src/assets/images/plant_lvl_0.png'
 
-        this.plantX = this.player.state === 1 ? -50 : 60;
+        this.plantX = this.player.state === 1 ? -50 : 70;
         this.position = {
             x: this.player.position.x + this.plantX, 
-            y: this.player.position.y - 15
+            y: this.player.position.y + 5
         }
     }
 
     update(ctx) {
-        console.log(this.counter)
         this.draw(ctx)
         if (this.counter >= 1000) {
             this.grow1();
