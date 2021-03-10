@@ -5,11 +5,23 @@
 
 #game-screen {
     border: black 1px solid;
-    background-color: black;
-    background-image: url('../assets/images/game_start_background.png');
+    // background-color: black;
+    // background-image: url('../assets/images/game_start_background.png');
 	margin-right: 70px;
 	border-radius: 8px;
+    display: none;
 }
+
+#game-start {
+    border: black 1px solid;
+    // background-color: black;
+    // background-image: url('../assets/images/game_start_background.png');
+	margin-right: 70px;
+	border-radius: 8px;
+    // display: none;
+}
+
+
 
 #title {
     font-family: 'Orbitron', sans-serif;

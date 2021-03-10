@@ -9,10 +9,14 @@ import StartScreen from './scripts/startScreen'
 window.addEventListener('DOMContentLoaded', () => {
     const canvas = document.querySelector('#game-screen');
     const ctx = canvas.getContext('2d');
+    const gameStart = document.querySelector('#game-start')
+    const ctx1 = gameStart.getContext('2d');
     
     // Set canvas size 
     canvas.width = 1400 // 35 columns
     canvas.height = 760 // 18 rows
+    gameStart.width =  1400;
+    gameStart.height = 760
 
     // ctx.font = "50px Arial";
     // ctx.fillStyle = 'red'
@@ -22,9 +26,10 @@ window.addEventListener('DOMContentLoaded', () => {
     const game = new GameBoard(ctx)
 
     let time = 0;
+
     function startScreen(timestamp) {
-        ctx.clearRect(0, 0, 1400, 760)
-        start.draw(ctx)
+        ctx1.clearRect(0, 0, 1400, 760)
+        start.draw(ctx1)
         requestAnimationFrame(startScreen);
     }
 
@@ -37,7 +42,13 @@ window.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(playGame);
     }
 
-    startScreen(ctx);
+    startScreen(ctx1);
+
+    gameStart.addEventListener('click', () => {
+        gameStart.style.display = "none"
+        canvas.style.display = "block"
+        playGame();
+    })
 
     // playGame();
 
