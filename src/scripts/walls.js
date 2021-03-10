@@ -8,7 +8,7 @@ class Wall {
             y: y
         };
         this.window = new Image();
-        this.window.src = 'src/assets/images/planet_window.png'
+        this.window.src = 'src/assets/images/planet_window_cracked.png'
 
         // 1370, 140, 15, 0)
      
