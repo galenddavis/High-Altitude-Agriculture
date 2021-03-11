@@ -39,7 +39,7 @@ class Oxygen {
             this.game.style.display = 'none'
             this.gameOver.style.display = 'block'
         } else if (this.width >= 735) {
-            this.width = 735
+            this.width = 734
         } else {
             this.reduceO2();
         }
