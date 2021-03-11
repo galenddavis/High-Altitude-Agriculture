@@ -1,6 +1,7 @@
 import Character from './character'
 
 
+
 class Oxygen {
     constructor(height, width, x, y, player) {
         this.height = height;
@@ -8,13 +9,17 @@ class Oxygen {
         // max width = 735
         this.amount = width * 2
         // this.plants = player.plants
-        this.speed = -0.5
+        this.speed = -1.6
+        // this.speed = -0.6
         // this.speed = -0.5
         this.color = '#57f954'
         this.position = {
             x: x,
             y: y
         };
+        this.game = document.querySelector('#game-screen');
+        this.gameOver = document.querySelector('#game-over')
+        this.ctx2 = this.gameOver.getContext('2d');
     }
 
     draw(ctx) {
@@ -29,7 +34,9 @@ class Oxygen {
 
     update() {
         if (this.width <= 1) {
-            this.width = 735
+            // this.width = 735
+            this.game.style.display = 'none'
+            this.gameOver.style.display = 'block'
         } else if (this.width >= 735) {
             this.width = 735
         }

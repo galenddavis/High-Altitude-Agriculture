@@ -1,7 +1,7 @@
 
 class StartScreen {
-    constructor(ctx) {
-        this.ctx = ctx;
+    constructor(ctx1) {
+        this.ctx = ctx1;
         this.background = new Image();
         this.background.src = '/src/assets/images/game_start_background.png'
         this.ship = new Image();
@@ -38,11 +38,11 @@ class StartScreen {
     draw(ctx1) {
         this.update();
         ctx1.drawImage(this.background, 0, 0)
-        ctx1.drawImage(this.ship, this.srcX, this.srcY, this.width, this.height, 600, 250, 287, 202)
+        ctx1.drawImage(this.ship, this.srcX, this.srcY, this.width, this.height, 540, 200, 287, 202)
 
         ctx1.font = "50px DotGothic16";
         ctx1.fillStyle = 'white'
-        ctx1.fillText("Click Anywhere to Start", 440, 650);
+        ctx1.fillText("Click Anywhere to Start", 400, 480);
     }
 }
 

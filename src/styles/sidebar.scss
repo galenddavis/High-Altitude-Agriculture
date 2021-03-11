@@ -2,6 +2,15 @@
     // font-family: 'Orbitron', sans-serif;
 
     // font-family: 'Raleway', sans-serif;
+    
+#game-over {
+    border: black 1px solid;
+    // background-color: black;
+    // background-image: url('../assets/images/game_start_background.png');
+    margin-right: 70px;
+    border-radius: 8px;
+    display: none;
+}
 
 #game-screen {
     border: black 1px solid;
@@ -20,6 +29,7 @@
 	border-radius: 8px;
     // display: none;
 }
+
 
 
 

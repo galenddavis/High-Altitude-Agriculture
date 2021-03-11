@@ -12,6 +12,9 @@ class GameBoard {
         this.oxygen = new Oxygen(37, 600, 63, 55)
         this.player = new Character(300, 500, 100, this.ctx, this.oxygen);
         this.wall = new Wall(1370, 140, 15, 0)
+        this.game = document.querySelector('#game-screen');
+        this.gameOver = document.querySelector('#game-over')
+        this.ctx2 = this.gameOver.getContext('2d');
     }
 
     draw(ctx) {
@@ -24,6 +27,10 @@ class GameBoard {
     update(deltaTime, ctx) {
         this.draw(ctx)
         this.player.update(deltaTime, ctx)
+    }
+
+    lose() {
+        
     }
 }
 
