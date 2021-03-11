@@ -9,6 +9,9 @@ class GameOver {
     draw(ctx2) {
         ctx2.drawImage(this.background, 0, 0)
 
+        ctx2.font = "50px DotGothic16";
+        ctx2.fillStyle = 'red'
+        ctx2.fillText("GAME OVER", 580, 175);
         ctx2.font = "40px DotGothic16";
         ctx2.fillStyle = 'white'
         ctx2.fillText("Each of us have a gift, given us freely by the universe", 160, 275);
@@ -17,7 +20,7 @@ class GameOver {
         ctx2.fillText("- Kim Stanley Robinson, Red Mars", 190, 485);
         
         ctx2.font = "30px DotGothic16";
-        ctx2.fillText("Click Anywhere to Live Again", 500, 685);
+        ctx2.fillText("Click Anywhere to Live Again", 500, 600);
     }
 }
 

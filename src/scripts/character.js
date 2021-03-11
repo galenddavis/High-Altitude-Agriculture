@@ -52,17 +52,13 @@ class Character {
     // }
 
     draw(ctx) {
-        debugger
         ctx.drawImage(this.player, this.position.x, this.position.y, this.height, this.width)
         this.plants.forEach((plant) => {
-            debugger
             // ctx.drawImage(this.player, this.position.x, this.position.y, this.height, this.width)
             if (plant.position.y > this.position.y) {
-                debugger
                 ctx.drawImage(this.player, this.position.x, this.position.y, this.height, this.width)
                 plant.update(this.ctx)
             } else {
-                debugger
                 plant.update(this.ctx)
                 ctx.drawImage(this.player, this.position.x, this.position.y, this.height, this.width)
             }

@@ -44,13 +44,22 @@ window.addEventListener('DOMContentLoaded', () => {
         ctx.clearRect(0, 0, 1400, 760)
         let deltaTime = timestamp - time;
         time = timestamp;
+        
+        console.log(game)
         game.update(deltaTime, ctx)
-        requestAnimationFrame(playGame);
+        if (canvas.style.display === 'block') {
+            requestAnimationFrame(playGame);
+        }
+        
     }
 
     function gameOver(timeStamp) {
         ctx2.clearRect(0, 0, 1400, 760)
         gameover.draw(ctx2)
+        if (over.style.display === 'block') {
+            game.lose()
+            // game = new GameBoard(ctx)
+        }
         requestAnimationFrame(gameOver);
     }
 
@@ -60,14 +69,14 @@ window.addEventListener('DOMContentLoaded', () => {
     gameStart.addEventListener('click', () => {
         gameStart.style.display = "none"
         canvas.style.display = "block"
+        // deltaTime = 0
         playGame();
     })
 
     over.addEventListener('click', () => {
         over.style.display = "none"
         gameStart.style.display = "block"
-        game = new GameBoard(ctx)
-        playGame();
+        // playGame();
     })
 
     // playGame();

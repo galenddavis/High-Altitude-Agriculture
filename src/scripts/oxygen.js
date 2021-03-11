@@ -3,13 +3,13 @@ import Character from './character'
 
 
 class Oxygen {
-    constructor(height, width, x, y, player) {
+    constructor(height, width, x, y, speed) {
         this.height = height;
         this.width = width; 
         // max width = 735
         this.amount = width * 2
         // this.plants = player.plants
-        this.speed = -1.6
+        this.speed = 0 || speed
         // this.speed = -0.6
         // this.speed = -0.5
         this.color = '#57f954'
@@ -35,12 +35,14 @@ class Oxygen {
     update() {
         if (this.width <= 1) {
             // this.width = 735
+            this.speed = 0
             this.game.style.display = 'none'
             this.gameOver.style.display = 'block'
         } else if (this.width >= 735) {
             this.width = 735
+        } else {
+            this.reduceO2();
         }
-        this.reduceO2();
     }
 
     reduceO2() {
