@@ -30,9 +30,6 @@
     // display: none;
 }
 
-
-
-
 #title {
     font-family: 'Orbitron', sans-serif;
     font-size: 100px;
@@ -88,5 +85,17 @@
         .key {
             font-weight: bold;
         }
+    }
+}
+
+.social {
+    margin-top: 40%;
+    font-size: 30px;
+    display: flex;
+    // flex-direction: column;
+    justify-content: space-around;
+    
+    a {
+        color: black;
     }
 }

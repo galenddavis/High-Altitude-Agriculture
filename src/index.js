@@ -44,13 +44,11 @@ window.addEventListener('DOMContentLoaded', () => {
         ctx.clearRect(0, 0, 1400, 760)
         let deltaTime = timestamp - time;
         time = timestamp;
-        
-        console.log(game)
         game.update(deltaTime, ctx)
         if (canvas.style.display === 'block') {
             requestAnimationFrame(playGame);
         }
-        
+
     }
 
     function gameOver(timeStamp) {
