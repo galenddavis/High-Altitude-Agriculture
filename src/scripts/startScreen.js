@@ -39,7 +39,7 @@ class StartScreen {
     draw(ctx1) {
         this.update();
         ctx1.drawImage(this.background, 0, 0)
-        ctx1.drawImage(this.ship, this.srcX, this.srcY, this.width, this.height, 540, 200, 287, 202)
+        // ctx1.drawImage(this.ship, this.srcX, this.srcY, this.width, this.height, 540, 200, 287, 202)
 
         ctx1.font = "50px DotGothic16";
         ctx1.fillStyle = 'white'
