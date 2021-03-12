@@ -31,5 +31,6 @@ This game is largely be built in vanilla JS along with HTML Canvas and CSS to pr
 # Implementation 
 
 * Constantly decreasing oxygen level can be temporarily bumped back up by placing seeds. 
+
 https://github.com/galenddavis/javascript-final/issues/3#issue-830437950
-* 
+
