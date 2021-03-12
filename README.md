@@ -2,6 +2,8 @@
 
 The year is 2065 and you are the final surviving memeber of your crew. You're still in orbit about an uninhabitable planet. Your food should last your for nearly 3 more weeks, but resources are dwindling and machinery is starting to break down. Low Orbit Agriculture is a relaxing farming simulator where failure means death. How long can you keep your crops, and yourself, alive in the face of dire circumstances. 
 
+![gamescreen](https://user-images.githubusercontent.com/73361653/110998258-8c53fe00-834c-11eb-946c-67d6eea14766.PNG)
+
 # Functionality & MVPs
 
 While playing this game, the user will be able to:
