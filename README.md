@@ -41,3 +41,11 @@ This game is largely be built in vanilla JS along with HTML Canvas and CSS to pr
 
 ![gamestart](https://user-images.githubusercontent.com/73361653/110998357-af7ead80-834c-11eb-8d1b-8d6ec6aabe61.gif)
 
+* Utilized HTML canvas in order to show different start screens, as well as game over screens. 
+
+![game over](https://user-images.githubusercontent.com/73361653/110998625-1a2fe900-834d-11eb-9def-9abd2e783c57.PNG)
+
+# Future Additions
+
+* More graceful transitions between game start and game over screens. 
+
