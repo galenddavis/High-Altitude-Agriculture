@@ -31,6 +31,11 @@ This game is largely be built in vanilla JS along with HTML Canvas and CSS to pr
 # Implementation 
 
 * Constantly decreasing oxygen level can be temporarily bumped back up by placing seeds. 
+* Character movement and planting based on user input. 
 
 ![Oxygen-meter](https://user-images.githubusercontent.com/73361653/110997057-da680200-834a-11eb-9388-64e42243b025.gif)
+
+* Created sprite art and implemented a sprite sheet for the game's start screen. 
+
+![gamestart](https://user-images.githubusercontent.com/73361653/110998073-44cd7200-834c-11eb-8037-cd00c7c58be2.gif)
 
