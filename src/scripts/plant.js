@@ -10,8 +10,9 @@ class Plant {
         this.width = 65
         this.ctx = player.ctx;
         this.player = player;
-        this.plant = new Image();
-        this.plant.src = 'src/assets/images/plant_lvl_0.png'
+        this.plant = document.getElementById('baby-plant')
+        // this.plant = new Image();
+        // this.plant.src = 'src/assets/images/plant_lvl_0.png'
 
         this.plantX = this.player.state === 1 ? -50 : 70;
         this.position = {
@@ -34,7 +35,8 @@ class Plant {
     grow1() {
         if (this.stage === 0) {
             this.stage += 1
-            this.plant.src = 'src/assets/images/plant_lvl_1.png'
+            // this.plant.src = 'src/assets/images/plant_lvl_1.png'
+            this.plant = document.getElementById('middle-plant')
             this.ctx.drawImage(this.plant, this.position.x, this.position.y, this.width, this.height)
         }
     }
@@ -42,7 +44,8 @@ class Plant {
     grow2() {
         if (this.stage === 1) {
             this.stage += 1
-            this.plant.src = 'src/assets/images/plant_lvl_2.png'
+            // this.plant.src = 'src/assets/images/plant_lvl_2.png'
+            this.plant = document.getElementById('adult-plant')
             this.ctx.drawImage(this.plant, this.position.x, this.position.y, this.width, this.height)
         }
     }

@@ -2,8 +2,9 @@
 class GameOver {
     constructor(ctx1) {
         this.ctx = ctx1;
-        this.background = new Image();
-        this.background.src = '/src/assets/images/game_start_background.png'
+        // this.background = new Image();
+        // this.background.src = '/src/assets/images/game_start_background.png'
+        this.background = document.getElementById('game-start-img')
     }
 
     draw(ctx2) {

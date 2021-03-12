@@ -6,8 +6,9 @@ import Oxygen from './oxygen'
 class GameBoard {
     constructor(ctx) {
         this.ctx = ctx
-        this.floor = new Image();
-        this.floor.src = '/src/assets/images/floor_background.png'
+        this.floor = document.getElementById('floor-background')
+        // this.floor = new Image();
+        // this.floor.src = '/src/assets/images/floor_background.png'
         this.oxygen = new Oxygen(37, 600, 63, 55, -0.8)
         this.player = new Character(300, 500, 100, this.ctx, this.oxygen);
         this.wall = new Wall(1370, 140, 15, 0)

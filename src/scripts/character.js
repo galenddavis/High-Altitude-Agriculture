@@ -15,8 +15,9 @@ class Character {
             y: y
         }
         this.state = 0
-        this.player = new Image();
-        this.player.src = 'src/assets/images/player_right.png'
+        this.player = document.getElementById('player-right')
+        // this.player = new Image();
+        // this.player.src = 'src/assets/images/player_right.png'
 
         // Movement
         document.addEventListener('keydown', event => {
@@ -74,11 +75,13 @@ class Character {
         if (this.keys && this.keys['ArrowDown']) {this.position.y += 5}
         if (this.keys && this.keys['ArrowLeft']) {
             this.state = 1
-            this.player.src = 'src/assets/images/player_left.png'
+            // this.player.src = 'src/assets/images/player_left.png'
+            this.player = document.getElementById('player-left')
             this.position.x -= 5}
         if (this.keys && this.keys['ArrowRight']) {
             this.state = 0
-            this.player.src = 'src/assets/images/player_right.png'
+            this.player = document.getElementById('player-right')
+            // this.player.src = 'src/assets/images/player_right.png'
             this.position.x += 5}
         
 
