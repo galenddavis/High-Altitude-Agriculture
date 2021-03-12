@@ -5,9 +5,9 @@ class StartScreen {
         // this.background = new Image();
         this.background = document.getElementById('game-start-img')
         // this.background.src = '/src/assets/images/game_start_background.png'
-        this.ship = new Image();
-        this.ship.src = '/src/assets/images/spaceship_sprite_sheet.png'
-        // this.ship.src = '/src/assets/images/spaceship.gif'
+        // this.ship = new Image();
+        this.ship = document.getElementById('ship-sprites')
+        // this.ship.src = '/src/assets/images/spaceship_sprite_sheet.png'
         this.canWidth = 1400;
         this.canHeight = 760;
         this.x = 0;
