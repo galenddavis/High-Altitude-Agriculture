@@ -32,5 +32,5 @@ This game is largely be built in vanilla JS along with HTML Canvas and CSS to pr
 
 * Constantly decreasing oxygen level can be temporarily bumped back up by placing seeds. 
 
-https://user-images.githubusercontent.com/73361653/110997057-da680200-834a-11eb-9388-64e42243b025.gif
+![Oxygen-meter](https://user-images.githubusercontent.com/73361653/110997057-da680200-834a-11eb-9388-64e42243b025.gif)
 
