@@ -2,8 +2,9 @@
 class StartScreen {
     constructor(ctx1) {
         this.ctx = ctx1;
-        this.background = new Image();
-        this.background.src = '/src/assets/images/game_start_background.png'
+        // this.background = new Image();
+        this.background = document.getElementById('game-start-img')
+        // this.background.src = '/src/assets/images/game_start_background.png'
         this.ship = new Image();
         this.ship.src = '/src/assets/images/spaceship_sprite_sheet.png'
         // this.ship.src = '/src/assets/images/spaceship.gif'
