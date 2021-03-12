@@ -1,14 +1,14 @@
 # Background
 
-The year is 2065 and you are the final surviving memeber of the ISS 2.0. You're still in orbit about an uninhabitable planet Earth. Your food should last your for nearly 3 more weeks, but resources are dwindling and machinery is starting to break down. Low Orbit Agriculture is a relaxing farming simulator where failure means death. How long can you keep your crops, and yourself, alive in the face of dire circumstances. 
+The year is 2065 and you are the final surviving memeber of your crew. You're still in orbit about an uninhabitable planet. Your food should last your for nearly 3 more weeks, but resources are dwindling and machinery is starting to break down. Low Orbit Agriculture is a relaxing farming simulator where failure means death. How long can you keep your crops, and yourself, alive in the face of dire circumstances. 
 
 # Functionality & MVPs
 
 While playing this game, the user will be able to:
 
 * Control their character and move them around their small ship. 
-* Plant seeds and tend to their existing plants. 
-* Monitor oxygen levels that will decline and grow based on the status of their crops. 
+* Plant seeds and dig up plants.
+* Monitor oxygen levels that will decline and grow based on the amount of crops. 
 
 # Technologies and Libraries
 
@@ -19,9 +19,9 @@ This game will largely be built in vanilla JS along with HTML Canvas and CSS to 
 
 ### Challenges
 
-* I fully anticipate challenges with Canvas as it's a new technology that I have not used before. 
-* Handling constant user input and character movement isn't something that I've ever done before, so I'm anticipating having to spend some time researching that as well. 
-* I am not fully sure of how the styling works for something inside a canvas so I'm looking forward to that as well. 
+* Understanding how to draw on a canvas and use requestAnimationFrame in order to get a looping animation.. 
+* Handling constant user input and character movement. 
+* Developing and creating a github pages deployment. 
 
 # Wireframes
 
