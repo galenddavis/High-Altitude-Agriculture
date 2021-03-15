@@ -102,18 +102,9 @@ canvas {
 }
 
 .social {
-    // margin-top: 20%;
-    // flex-direction: column;
-    // justify-content: space-around;
     font-size: 30px;
     display: flex;
-    // background-color: #c0c0c0;
     background-color: black;
-    // background-color: #4e4e4e;
-    // border-top: 3px #4e4e4e solid;
-    // background-image: url('/src/assets/images/game_start_background.png');
-    
-    
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -127,10 +118,6 @@ canvas {
 }
 
 @media screen and (max-width:1400px) {
-    // .sidebar {
-    //     display: none;
-    // }
-
     #title {
         font-size: 80px;
     }
