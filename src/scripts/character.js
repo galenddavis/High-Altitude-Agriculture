@@ -9,6 +9,7 @@ class Character {
         this.width = size;
         this.height = size;
         this.plants = [];
+        this.seeds = 10;
         this.oxygen = oxygen
         this.position = {
             x: x, 
@@ -16,8 +17,6 @@ class Character {
         }
         this.state = 0
         this.player = document.getElementById('player-right')
-        // this.player = new Image();
-        // this.player.src = 'src/assets/images/player_right.png'
 
         // Movement
         document.addEventListener('keydown', event => {
@@ -45,15 +44,16 @@ class Character {
 
     }
 
-    // draw(ctx) {
-    //     this.plants.forEach( plant => {
-    //         plant.update(this.ctx)
-    //     })
-    //     ctx.drawImage(this.player, this.position.x, this.position.y, this.height, this.width)
-    // }
-
     draw(ctx) {
+        ctx.font = "50px DotGothic16";
+        this.seeds <= 0 ? ctx.fillStyle = 'red' : ctx.fillStyle = 'white'
+        ctx.fillText('Seeds: ' + this.seeds + '/10', 1050, 200)
         ctx.drawImage(this.player, this.position.x, this.position.y, this.height, this.width)
+        if (this.seeds <= 0) {
+            ctx.fillText('Time to Harvest:', 355, 200)
+            let img = document.getElementById('adult-plant')
+            // ctx.drawImage(img, 755, 150, 40, 60)
+        }
         this.plants.forEach((plant) => {
             // ctx.drawImage(this.player, this.position.x, this.position.y, this.height, this.width)
             if (plant.position.y > this.position.y) {
@@ -98,21 +98,29 @@ class Character {
     }
 
     plant() {
-        const plantInstance = new Plant(this)
-        this.plants.push(plantInstance)
-        this.plants[this.plants.length - 1].draw(this.ctx)
-        this.oxygen.increaseO2();
+        if (this.seeds > 0 && this.seeds <= 10) {
+            const plantInstance = new Plant(this)
+            this.plants.push(plantInstance)
+            this.plants[this.plants.length - 1].draw(this.ctx)
+            this.seeds -= 1
+        }
     }
-
+    
     pick() {
-        this.plants.forEach( plant => {
-            if (Math.abs((this.position.x + this.width / 2) - (plant.position.x + plant.width / 2)) <= 40 && 
-                Math.abs((this.position.y + this.height / 2) - (plant.position.y + plant.height / 2)) <= 40) {
-                let index = this.plants.indexOf(plant)
-                this.plants.splice(index, 1)
-            }
-        })
-        // this.oxygen.decreaseSpeed(this.plants)
+        if (this.seeds <= 8) {
+            this.plants.forEach( plant => {
+                if (Math.abs((this.position.x + this.width / 2) - (plant.position.x + plant.width / 2)) <= 40 && 
+                Math.abs((this.position.y + this.height / 2) - (plant.position.y + plant.height / 2)) <= 40 && 
+                plant.stage === 2) {
+                    let index = this.plants.indexOf(plant)
+                    this.plants.splice(index, 1)
+                    if (plant.stage === 2) {
+                        this.seeds += 2
+                        this.oxygen.increaseO2();
+                    }
+                }
+            })
+        }
     }
 }
 
