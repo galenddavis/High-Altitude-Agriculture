@@ -98,11 +98,20 @@ class Character {
     }
 
     plant() {
+        debugger
         if (this.seeds > 0 && this.seeds <= 10) {
             const plantInstance = new Plant(this)
-            this.plants.push(plantInstance)
-            this.plants[this.plants.length - 1].draw(this.ctx)
-            this.seeds -= 1
+            this.plants.forEach(plant => {
+                debugger
+                if (Math.abs((this.position.x) - (plant.position.x)) <= 40 || 
+                Math.abs((this.position.y) - (plant.position.y)) <= 40) {
+                    debugger
+                    // const plantInstance = new Plant(this)
+                    this.plants.push(plantInstance)
+                    this.plants[this.plants.length - 1].draw(this.ctx)
+                    this.seeds -= 1
+                } 
+            })
         }
     }
     
