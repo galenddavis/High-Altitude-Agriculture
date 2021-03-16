@@ -51,7 +51,7 @@ class Character {
         ctx.fillText('Seeds: ' + this.seeds + '/10', 1050, 200)
         ctx.drawImage(this.player, this.position.x, this.position.y, this.height, this.width)
         if (this.seeds <= 0) {
-            ctx.fillText('Time to Harvest:', 355, 200)
+            ctx.fillText('Time to Harvest!', 355, 200)
             let img = document.getElementById('adult-plant')
             // ctx.drawImage(img, 755, 150, 40, 60)
         }
