@@ -129,32 +129,6 @@ class Character {
         }
     }
     
-
-    // plant() {
-    //     const plantInstance = new Plant(this);
-    //     debugger
-    //     if (this.plants.length === 0) {
-    //         this.plants.push(plantInstance);
-    //         this.plants[this.plants.length - 1].draw(this.ctx);
-    //         this.seeds -= 1;
-    //     } else if (this.seeds <= 10 && this.seeds >=1) {
-    //         for (let i = 0; i < this.plants.length; i ++) {
-    //             debugger
-    //             let xDist = Math.abs((plantInstance.position.x + plantInstance.width / 2) - ((this.plants[i].position.x + this.plants[i].width / 2)))
-    //             let yDist = Math.abs((plantInstance.position.y + plantInstance.height / 2) - (this.plants[i].position.y + this.plants[i].height / 2))
-    //             if ((xDist <= 20) && (yDist <= 20)) {
-    //                 debugger
-    //                 return; 
-    //             }
-                
-    //             debugger
-    //             this.plants.push(plantInstance);
-    //             this.plants[this.plants.length - 1].draw(this.ctx);
-    //             this.seeds -= 1;
-    //         }
-    //     }
-    // }
-    
     pick() {
         if (this.seeds <= 8) {
             this.plants.forEach( plant => {
