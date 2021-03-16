@@ -32,6 +32,7 @@ class GameBoard {
     lose() {
         this.oxygen = new Oxygen(37, 600, 63, 55, -0.4)
         this.player = new Character(300, 500, 100, this.ctx, this.oxygen);
+        
     }
 }
 

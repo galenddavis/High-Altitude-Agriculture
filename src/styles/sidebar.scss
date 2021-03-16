@@ -2,6 +2,10 @@
     // font-family: 'Orbitron', sans-serif;
 
     // font-family: 'Raleway', sans-serif;
+
+body {
+    background-image: url('/src/assets/images/game_start_background.png');
+}
     
 canvas {
     // border: black 1px solid;
@@ -20,6 +24,9 @@ canvas {
 
 #game-screen {
     display: none;
+    border-top: 2px #808080 solid;
+    // border-left: 2px white solid;
+    // border-right: 2px white solid;
 }
 
 // #game-start {
@@ -31,6 +38,7 @@ canvas {
     font-size: 100px;
 	margin: 20px;
 	margin-bottom: 40px;
+    color: white;
     // letter-spacing: 1px;
 	
 }
@@ -107,12 +115,28 @@ canvas {
     justify-content: center;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+    // border: 2px white solid;
+
+    stroke: aqua;
     
     a {
         padding: 7px 20px;
         color: #c0c0c0;
+
+        :hover {
+            color: #5fcde4;
+            // background-color: aqua; 
+        }
     }
 }
+
+// .gametime {
+//     background-color: #4e4e4e;
+    
+//     i:hover {
+//         color: #048aff;
+//     }
+// }
 
 @media screen and (max-width:1400px) {
     #title {

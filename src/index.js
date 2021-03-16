@@ -56,9 +56,11 @@ window.addEventListener('DOMContentLoaded', () => {
         gameover.draw(ctx2)
         if (over.style.display === 'block') {
             game.lose()
+            
             // game = new GameBoard(ctx)
         }
         requestAnimationFrame(gameOver);
+        
     }
 
     startScreen(ctx1);
@@ -67,16 +69,25 @@ window.addEventListener('DOMContentLoaded', () => {
     gameStart.addEventListener('click', () => {
         gameStart.style.display = "none"
         canvas.style.display = "block"
+        // const social = document.getElementById('social')
+        // social.classList.toggle('gametime')
         // deltaTime = 0
         playGame();
+        // const social = document.getElementById('social')
     })
 
+    
     over.addEventListener('click', () => {
         over.style.display = "none"
         gameStart.style.display = "block"
         // playGame();
     })
-
+    
     // playGame();
+    
+})
 
+over.addEventListener('onchange', () => {
+    const social = document.getElementById('social')
+    social.classList.toggle('gametime')
 })
