@@ -154,32 +154,6 @@ class Character {
     //         }
     //     }
     // }
-
-    // plant() {
-    //     const plantInstance = new Plant(this)
-    //     if (this.seeds === 10) {
-    //         // const plantInstance = new Plant(this)
-    //         this.plants.push(plantInstance)
-    //         this.plants[this.plants.length - 1].draw(this.ctx)
-    //         this.seeds -= 1
-
-    //     } else if (this.seeds <= 10 && this.seeds >= 1) {
-    //         this.plants.forEach(plant1 => {
-    //             let xDist = Math.abs((plantInstance.position.x) - (plant1.position.x))
-    //             let yDist = Math.abs((plantInstance.position.y) - (plant1.position.y))
-
-    //             debugger
-    //             if ((xDist <=20) && (yDist <=20) && (plant1 !== plantInstance)) {
-    //                 // const plantInstance = new Plant(this)
-    //                 return;
-    //             } else {
-    //                 this.plants.push(plantInstance)
-    //                 this.plants[this.plants.length - 1].draw(this.ctx)
-    //                 this.seeds -= 1
-    //             } 
-    //         })
-    //     }
-    // }
     
     pick() {
         if (this.seeds <= 8) {
