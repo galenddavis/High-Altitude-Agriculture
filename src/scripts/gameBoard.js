@@ -9,7 +9,7 @@ class GameBoard {
         this.floor = document.getElementById('floor-background')
         // this.floor = new Image();
         // this.floor.src = '/src/assets/images/floor_background.png'
-        this.oxygen = new Oxygen(37, 600, 63, 55, -0.2)
+        this.oxygen = new Oxygen(37, 600, 63, 55, -0.4)
         this.player = new Character(300, 500, 100, this.ctx, this.oxygen);
         this.wall = new Wall(1370, 140, 15, 0)
         this.game = document.querySelector('#game-screen');
@@ -30,7 +30,7 @@ class GameBoard {
     }
 
     lose() {
-        this.oxygen = new Oxygen(37, 600, 63, 55, -0.2)
+        this.oxygen = new Oxygen(37, 600, 63, 55, -0.4)
         this.player = new Character(300, 500, 100, this.ctx, this.oxygen);
     }
 }
