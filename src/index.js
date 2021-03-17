@@ -86,8 +86,3 @@ window.addEventListener('DOMContentLoaded', () => {
     // playGame();
     
 })
-
-over.addEventListener('onchange', () => {
-    const social = document.getElementById('social')
-    social.classList.toggle('gametime')
-})

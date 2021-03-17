@@ -130,7 +130,7 @@ class Character {
     }
     
     pick() {
-        if (this.seeds <= 8) {
+        if (this.seeds <= 9) {
             this.plants.forEach( plant => {
                 if (Math.abs((this.position.x + this.width / 2) - (plant.position.x + plant.width / 2)) <= 40 && 
                 Math.abs((this.position.y + this.height / 2) - (plant.position.y + plant.height / 2)) <= 40) {
@@ -139,6 +139,9 @@ class Character {
                         this.plants.splice(index, 1)
                         this.seeds += 2
                         this.oxygen.increaseO2();
+                        if (this.seeds > 10) {
+                            this.seeds = 10
+                        }
                     }
                 }
             })
